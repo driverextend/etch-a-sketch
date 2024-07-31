@@ -4,8 +4,6 @@ const button = document.querySelector("button")
 let containerSize = parseInt(getComputedStyle(container).width)
 
 function renderGridBySquaresPerSide(amount = 16){
-    if (amount > 100) amount = 100
-
     clearGrid()
     
     for (let count = 1; count <= amount * amount; count++){
@@ -29,6 +27,9 @@ function clearGrid(){
 
 button.addEventListener("click", () => {
     let userInput = parseInt(prompt(`new number of squares per side:\n(default value: 16)`))
+   
+    if (userInput > 100) userInput = 100
+    if (!Number.isInteger(userInput)) userInput = 16
 
     renderGridBySquaresPerSide(userInput)
 
