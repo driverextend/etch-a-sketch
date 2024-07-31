@@ -2,6 +2,7 @@ const container = document.getElementById("container")
 const button = document.querySelector("button")
 
 let containerSize = parseInt(getComputedStyle(container).width)
+let currentOpacity = 0
 
 function renderGridBySquaresPerSide(amount = 16){
     clearGrid()
@@ -14,7 +15,11 @@ function renderGridBySquaresPerSide(amount = 16){
         div.style.height = sideLength
     
         div.addEventListener("mouseover", () => {
-            div.classList.add("change-to-black")
+            // div.classList.add("change-to-black")
+            div.style.backgroundColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${currentOpacity})`
+            currentOpacity >= 1 ? currentOpacity = 0: currentOpacity += .1
+            console.log(currentOpacity)
+
         })
     
         container.appendChild(div)
