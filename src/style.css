@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+form {
+  margin: 1em;
+}
+
+body {
+  height: 100svh;
+  width: 100svw;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.set-btn {
+  padding: 0 1em;
+}
+
+.reset-btn {
+  font-size: large;
+  font-weight: bold;
+
+  padding: 1em;
+  margin: 0 1em 1em;
+}
+
+.change-to-black {
+  background-color: black;
+}
+
+.etsketch-frame {
+  display: flex;
+  flex-wrap: wrap;
+  width: 640px;
+  height: 640px;
+  outline: 1px solid black;
+}
